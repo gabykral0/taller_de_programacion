@@ -1,41 +1,39 @@
 <!DOCTYPE html>
-<HTML>
-	<HEAD>
-		<TITLE>Calculo IMC</TITLE>
-    <link rel="stylesheet" href="src/css/style.css">
-  
-	</HEAD>
-	<BODY>
-		<center>
-      <h1 style="color: green;" >insertá tu altura en metros y tu peso en kg</h1>
-     
-    <form action="" onsubmit="calcular_imc(event)">
-			<input type="number" name="altura" id="altura" onchange="calcular_imc(event)">
-			<input type="number" name="peso" id="peso" onchange="calcular_imc(event)">
-			<button type="submit" button style="color:rgba(238, 71, 15, 0.568)">calcular peso </button>
-    
-		</form>
-  </center>
-<center>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Unidades</h1>
+        
+        <!-- Selector de tipo de conversión -->
+        <div class="input-group">
+            <label for="conversion-type">Selecciona tipo de conversión:</label>
+            <select id="conversion-type">
+                <option value="cm-to-m">Centímetros a Metros</option>
+                <option value="km-to-mi">Kilómetros a Millas</option>
+            </select>
+        </div>
 
- <p style="font-size: larger ; color: #f70606;">
-	El índice de masa corporal (IMC) es un número que se calcula con base en el peso y la estatura de la persona. Para la mayoría de las personas, el IMC es un indicador confiable de la gordura y se usa para identificar las categorías de peso que pueden llevar a problemas de salud.
- </p>
+        <!-- Entrada del valor -->
+        <div class="input-group">
+            <label for="value">Introduce el valor:</label>
+            <input type="number" id="value" placeholder="Introduce un número">
+        </div>
 
-		<h2 id="resu"></h2>
-  </center>
-			<SCRIPT type="text/javascript">
+        <!-- Botón para convertir -->
+        <button id="convert-btn">Convertir</button>
 
-			function calcular_imc(event) {
-				event.preventDefault();
-				var altura;
-				var peso;
-				altura = document.getElementById("altura").value;
-				peso = document.getElementById("peso").value;
-			
-				document.getElementById("resu").innerText = peso/(altura*altura);					
-			}
-			
-		</SCRIPT>
-	</BODY>
-</HTML>
+        <!-- Resultado -->
+        <div class="output-group">
+            <p>Resultado:</p>
+            <p id="result">0.00</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
